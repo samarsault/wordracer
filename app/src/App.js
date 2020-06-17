@@ -58,7 +58,8 @@ class App extends Component{
       this.words = data.words;
       this.setState({
         user: data.user,
-        score: 0
+        score: 0,
+        multiplier: 1,
       })
     }
   }
@@ -118,7 +119,7 @@ class App extends Component{
         if (activeWord === newInput){
           // correct completely
           const { time, score, multiplier } = this.state;
-          const wordScore = Math.ceil((1/time * 10000)) * multiplier;
+          const wordScore = Math.ceil((1/time * 10000)) * multiplier * activeWord.length;
           this.setState({
             activeKey: key.toLowerCase(),
             input: '',
