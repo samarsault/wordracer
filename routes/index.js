@@ -8,7 +8,7 @@ const faker = require('faker');
 function generateRandom(limit, length) {
     var arr = [];
     var n;
-    for(var i=0; i<length; i++)
+    for(var i=0; i<length; i++){
         do {
             n = Math.floor(Math.random()*limit+1);
         }while(arr.indexOf(n) !== -1)
